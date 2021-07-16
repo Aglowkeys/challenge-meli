@@ -19,24 +19,18 @@ const getFormattedProduct = (product) => {
 
 const getProductWithDescription = (item, description) => {
     return {
-        author: {
-            name: 'Emiliano',
-            lastname: 'Alfonso',
+        id: item.id,
+        title: item.title,
+        price: {
+            currency: item.currency_id,
+            amount: Math.trunc(item.price),
+            decimals: getDecimals(item.price),
         },
-        item: {
-            id: item.id,
-            title: item.title,
-            price: {
-                currency: item.currency_id,
-                amount: Math.trunc(item.price),
-                decimals: getDecimals(item.price),
-            },
-            picture: item.pictures[0]?.url || item.thumbnail,
-            condition: item.condition,
-            free_shipping: item.shipping.free_shipping,
-            sold_quantity: item.sold_quantity,
-            description,
-        },
+        picture: item.pictures[0]?.url || item.thumbnail,
+        condition: item.condition,
+        free_shipping: item.shipping.free_shipping,
+        sold_quantity: item.sold_quantity,
+        description,
     };
 };
 

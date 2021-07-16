@@ -35,22 +35,28 @@ router.get('/', async (req, res) => {
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     const requests = [axios.get(`/items/${id}`), axios.get(`/items/${id}/description`)];
-    let formattedProduct = {};
+    let product, productDescription;
 
     Promise.all(requests)
         .then((dataArray) => {
-            const product = dataArray[0].data;
-            const productDescription = dataArray[1].data.plain_text;
-            formattedProduct = getProductWithDescription(product, productDescription);
+            product = dataArray[0].data;
+            productDescription = dataArray[1].data.plain_text;
             return axios.get(`/categories/${product.category_id}`);
         })
         .then((categoryData) => {
             const { path_from_root } = categoryData.data;
             const categories = path_from_root.map((cat) => cat.name);
-            formattedProduct['categories'] = categories;
-            return res.json(formattedProduct);
+            const item = getProductWithDescription(product, productDescription);
+
+            const formattedObject = { author, item, categories };
+            return res.json(formattedObject);
         })
-        .catch((error) => res.status(500).json({ error }));
+        .catch((error) => {
+            if (error.message.endsWith('404')) {
+                return res.status(404).json(errors.not_found);
+            }
+            return res.status(500).json(errors.internal_error);
+        });
 });
 
 module.exports = router;
