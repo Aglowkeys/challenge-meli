@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('../axios');
-const getFormattedObject = require('../utils/functions');
+const { getObjectWithCategories, getObjectWithDescription } = require('../utils/functions');
 
 router.get('/', (req, res) => {
 	const productName = req.query.q;
@@ -14,10 +14,10 @@ router.get('/', (req, res) => {
 			const { filters, results } = response.data;
 			const { path_from_root } = filters[0].values[0];
 			const categories = path_from_root.map((cat) => cat.name);
-			const items = results.map((item) => getFormattedObject(item, categories));
+			const items = results.map((item) => getObjectWithCategories(item, categories));
 			return res.json(items);
 		})
-		.catch((error) => res.status(400).json({ error }));
+		.catch((error) => res.status(500).json({ error }));
 });
 
 router.get('/:id', (req, res) => {
@@ -26,11 +26,12 @@ router.get('/:id', (req, res) => {
 
 	Promise.all(requests)
 		.then((dataArray) => {
-			const productInfo = dataArray[0].data;
-			const productDescription = dataArray[1].data;
-			return res.json(productDescription);
+			const product = dataArray[0].data;
+			const productDescription = dataArray[1].data.plain_text;
+			const formattedProduct = getObjectWithDescription(product, productDescription);
+			return res.json(formattedProduct);
 		})
-		.catch((error) => res.status(400).json({ error }));
+		.catch((error) => res.status(500).json({ error }));
 });
 
 module.exports = router;
