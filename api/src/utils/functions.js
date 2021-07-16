@@ -2,27 +2,22 @@ const getDecimals = (price) => {
     return +price.toString().split('.')[1] || 0;
 };
 
-const getObjectWithCategories = (item, categories) => {
+const getFormattedProduct = (product) => {
     return {
-        author: {
-            name: 'Emiliano',
-            lastname: 'Alfonso',
-        },
-        categories,
-        id: item.id,
-        title: item.title,
+        id: product.id,
+        title: product.title,
         price: {
-            currency: item.currency_id,
-            amount: Math.trunc(item.price),
-            decimals: getDecimals(item.price),
+            currency: product.currency_id,
+            amount: Math.trunc(product.price),
+            decimals: getDecimals(product.price),
         },
-        picture: item.thumbnail,
-        condition: item.condition,
-        free_shipping: item.shipping.free_shipping,
+        picture: product.thumbnail,
+        condition: product.condition,
+        free_shipping: product.shipping.free_shipping,
     };
 };
 
-const getObjectWithDescription = (item, description) => {
+const getProductWithDescription = (item, description) => {
     return {
         author: {
             name: 'Emiliano',
@@ -45,4 +40,4 @@ const getObjectWithDescription = (item, description) => {
     };
 };
 
-module.exports = { getObjectWithCategories, getObjectWithDescription };
+module.exports = { getFormattedProduct, getProductWithDescription };

@@ -1,23 +1,35 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('../axios');
-const { getObjectWithCategories, getObjectWithDescription } = require('../utils/functions');
+const errors = require('../utils/errors');
+const { getFormattedProduct, getProductWithDescription } = require('../utils/functions');
 
-router.get('/', (req, res) => {
+const author = {
+    name: 'Emiliano',
+    lastname: 'Alfonso',
+};
+
+router.get('/', async (req, res) => {
     const productName = req.query.search;
-
-    if (!productName) return res.status(400).json('Ingresa un término a buscar');
+    if (!productName) return res.status(400).json(errors.empty_query);
 
     axios
         .get(`/sites/MLA/search?q=${productName}&limit=4`)
         .then((response) => {
             const { filters, results } = response.data;
+
+            if (results.length === 0) {
+                return res.status(404).json(errors.not_found);
+            }
+
             const { path_from_root } = filters[0].values[0];
-            const categories = path_from_root.map((cat) => cat.name);
-            const items = results.map((item) => getObjectWithCategories(item, categories));
-            return res.json(items);
+            const categories = path_from_root.map((category) => category.name);
+            const items = results.map((item) => getFormattedProduct(item));
+
+            const formattedObject = { author, categories, items };
+            return res.json(formattedObject);
         })
-        .catch((error) => res.status(500).json({ error }));
+        .catch(() => res.status(500).json(errors.internal_error));
 });
 
 router.get('/:id', (req, res) => {
@@ -29,7 +41,7 @@ router.get('/:id', (req, res) => {
         .then((dataArray) => {
             const product = dataArray[0].data;
             const productDescription = dataArray[1].data.plain_text;
-            formattedProduct = getObjectWithDescription(product, productDescription);
+            formattedProduct = getProductWithDescription(product, productDescription);
             return axios.get(`/categories/${product.category_id}`);
         })
         .then((categoryData) => {
