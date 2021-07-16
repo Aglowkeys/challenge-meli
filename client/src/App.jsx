@@ -7,18 +7,18 @@ import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
 
 const App = () => {
-	return (
-		<div className='App'>
-			<Navbar />
-			<Switch>
-				<Route exact path='/' component={Home} />
-				<Route exact path='/items' component={Results} />
-				<Route exact path='/items/:id' component={Details} />
-				<NotFound />
-			</Switch>
-			<Footer />
-		</div>
-	);
+    return (
+        <div className='App'>
+            <Navbar />
+            <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/items' component={Results} />
+                <Route exact path='/items/:id' component={Details} />
+                <NotFound />
+            </Switch>
+            <Footer />
+        </div>
+    );
 };
 
 export default App;
