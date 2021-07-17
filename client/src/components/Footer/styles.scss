@@ -1,0 +1,21 @@
+@import '../../sass/variables';
+
+.footer {
+    padding: 1.5em;
+    text-align: center;
+    color: white;
+    background-color: $gray-400;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-top: auto;
+
+    a {
+        color: $yellow;
+
+        &:hover,
+        &:focus {
+            color: lighten($yellow, 30%);
+            text-decoration: none;
+        }
+    }
+}

@@ -13,3 +13,10 @@ body {
     font-family: 'Nunito', 'Proxima Nova', Helvetica, Arial, sans-serif;
     background-color: $gray-100;
 }
+
+.App {
+    min-height: 100vh;
+    background: gold;
+    display: flex;
+    flex-direction: column;
+}

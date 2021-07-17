@@ -3,8 +3,9 @@ const author = require('../utils/author');
 const errors = require('../utils/errors');
 const { getFormattedProduct, getProductWithDescription } = require('../utils/functions');
 
+// GET /api/items?q=query
 const getProducts = (req, res) => {
-    const productName = req.query.search;
+    const productName = req.query.q;
     if (!productName) return res.status(400).json(errors.empty_query);
 
     axios
@@ -26,6 +27,7 @@ const getProducts = (req, res) => {
         .catch(() => res.status(500).json(errors.internal_error));
 };
 
+// GET /api/items/:id
 const getProductInfo = (req, res) => {
     const { id } = req.params;
     const requests = [axios.get(`/items/${id}`), axios.get(`/items/${id}/description`)];
@@ -38,10 +40,12 @@ const getProductInfo = (req, res) => {
             return axios.get(`/categories/${product.category_id}`);
         })
         .then((categoryData) => {
+            // Necesito traer las categorías para evitar errores en el front y
+            // poder mostrar los breadcrumbs si entro directamente a la URL del producto.
             const { path_from_root } = categoryData.data;
             const categories = path_from_root.map((cat) => cat.name);
-            const item = getProductWithDescription(product, productDescription);
 
+            const item = getProductWithDescription(product, productDescription);
             const formattedObject = { author, item, categories };
             return res.json(formattedObject);
         })

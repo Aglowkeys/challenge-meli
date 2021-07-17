@@ -17,19 +17,19 @@ const getFormattedProduct = (product) => {
     };
 };
 
-const getProductWithDescription = (item, description) => {
+const getProductWithDescription = (product, description) => {
     return {
-        id: item.id,
-        title: item.title,
+        id: product.id,
+        title: product.title,
         price: {
-            currency: item.currency_id,
-            amount: Math.trunc(item.price),
-            decimals: getDecimals(item.price),
+            currency: product.currency_id,
+            amount: Math.trunc(product.price),
+            decimals: getDecimals(product.price),
         },
-        picture: item.pictures[0]?.url || item.thumbnail,
-        condition: item.condition,
-        free_shipping: item.shipping.free_shipping,
-        sold_quantity: item.sold_quantity,
+        picture: product.pictures[0]?.url || product.thumbnail,
+        condition: product.condition,
+        free_shipping: product.shipping.free_shipping,
+        sold_quantity: product.sold_quantity,
         description,
     };
 };
