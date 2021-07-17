@@ -1,12 +1,17 @@
+import Container from '../Container';
 import './styles.scss';
 
 const Footer = () => {
     return (
         <footer className='footer'>
-            Realizado por{' '}
-            <a href='http://github.com/Aglowkeys' target='_blank' rel='noopener noreferrer'>
-                Emiliano Alfonso
-            </a>
+            <Container center>
+                <p>
+                    Realizado por{' '}
+                    <a href='http://github.com/Aglowkeys' target='_blank' rel='noopener noreferrer'>
+                        Emiliano Alfonso
+                    </a>
+                </p>
+            </Container>
         </footer>
     );
 };
