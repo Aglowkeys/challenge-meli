@@ -4,7 +4,7 @@ import './styles.scss';
 const Footer = () => {
     return (
         <footer className='footer'>
-            <Container center>
+            <Container>
                 <p>
                     Realizado por{' '}
                     <a href='http://github.com/Aglowkeys' target='_blank' rel='noopener noreferrer'>

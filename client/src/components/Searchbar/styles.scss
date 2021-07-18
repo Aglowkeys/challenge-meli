@@ -1,0 +1,51 @@
+@import '../../sass/variables';
+
+.search-form {
+    display: flex;
+    border: 2px solid transparent;
+    border-radius: 6px;
+
+    &:focus-within {
+        border: 2px solid $blue;
+    }
+
+    label {
+        width: 0;
+        height: 0;
+        position: absolute;
+        visibility: hidden;
+        top: -100vh;
+    }
+
+    input {
+        font-family: inherit;
+        font-size: $font-400;
+        padding: 0.5em 0.75em;
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        border-radius: 4px 0 0 4px;
+        outline: none;
+    }
+
+    button {
+        width: 50px;
+        align-self: stretch;
+        background-color: $gray-100;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+
+        &:hover,
+        &:focus {
+            background-color: $blue;
+        }
+
+        &:active {
+            background-color: darken($blue, 20%);
+        }
+    }
+}

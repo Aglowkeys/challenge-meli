@@ -4,7 +4,7 @@ import './styles.scss';
 
 const Navbar = () => (
     <nav className='navbar'>
-        <Container center>
+        <Container>
             <Searchbar />
         </Container>
     </nav>

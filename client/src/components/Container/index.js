@@ -1,7 +1,7 @@
 import './styles.scss';
 
-const Container = ({ center, children }) => {
-    return <div className={`container ${center && 'center'}`}>{children}</div>;
+const Container = ({ children }) => {
+    return <div className='container'>{children}</div>;
 };
 
 export default Container;
