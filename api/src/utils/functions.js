@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 const getCategoryId = (availableFilters) => {
     const sortedCategories = availableFilters[0].values.sort((a, b) => {
         return b.results - a.results;
