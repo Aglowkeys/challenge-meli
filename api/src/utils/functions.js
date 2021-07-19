@@ -1,3 +1,12 @@
+const axios = require('axios');
+
+const getCategoryId = (availableFilters) => {
+    const sortedCategories = availableFilters[0].values.sort((a, b) => {
+        return b.results - a.results;
+    });
+    return sortedCategories[0].id;
+};
+
 const getDecimals = (price) => {
     return +price.toString().split('.')[1] || 0;
 };
@@ -14,6 +23,7 @@ const getFormattedProduct = (product) => {
         picture: product.thumbnail,
         condition: product.condition,
         free_shipping: product.shipping.free_shipping,
+        address: product.address.state_name,
     };
 };
 
@@ -34,4 +44,4 @@ const getProductWithDescription = (product, description) => {
     };
 };
 
-module.exports = { getFormattedProduct, getProductWithDescription };
+module.exports = { getCategoryId, getFormattedProduct, getProductWithDescription };
