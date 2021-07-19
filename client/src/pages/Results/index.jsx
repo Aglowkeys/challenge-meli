@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from '../../axios';
-import ProductCard from '../../components/ProductCard';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Container from '../../components/Container';
+import ProductsContainer from '../../components/ProductsContainer';
 
 const Results = () => {
     const [products, setProducts] = useState([]);
@@ -29,15 +29,10 @@ const Results = () => {
         <main>
             <Container>
                 {breadcrumbs.length && <Breadcrumbs breadcrumbs={breadcrumbs} />}
-                {products.length && products.map((prod) => <ProductCard product={prod} />)}
+                {products.length && <ProductsContainer arrayProd={products} />}
             </Container>
         </main>
     );
 };
 
-// Cuando carga, tomar la URL de la query y hacer la petición al back
 export default Results;
-
-// const a = new URLSearchParams(useLocation().search);
-// console.log(a.get('search'));
-// history push a '/items?search=query'

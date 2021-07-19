@@ -1,8 +1,10 @@
+import './styles.scss';
+
 const Breadcrumbs = ({ breadcrumbs }) => {
     return (
-        <ul>
+        <ul className='breadcrumbs'>
             {breadcrumbs.map((category) => (
-                <li>{category}</li>
+                <li key={category}>{category}</li>
             ))}
         </ul>
     );
