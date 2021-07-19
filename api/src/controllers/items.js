@@ -7,7 +7,7 @@ const {
     getProductWithDescription,
 } = require('../utils/functions');
 
-// GET /api/items?q=query
+/// GET /api/items?q=query
 const getProducts = async (req, res) => {
     const productName = req.query.q;
     if (!productName) return res.status(400).json(errors.empty_query);
