@@ -3,7 +3,7 @@ const api = express();
 const cors = require('cors');
 const routes = require('./routes/index');
 
-api.use(cors());
+// api.use(cors());
 api.use(routes);
 
 api.listen(3001, () => {

@@ -2,11 +2,11 @@ import ProductCard from '../ProductCard';
 
 const ProductsContainer = ({ arrayProd }) => {
     return (
-        <section>
+        <main>
             {arrayProd.map((prod) => (
                 <ProductCard key={prod.id} product={prod} />
             ))}
-        </section>
+        </main>
     );
 };
 
