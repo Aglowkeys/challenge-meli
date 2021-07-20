@@ -18,10 +18,12 @@ const Details = () => {
     }, [id]);
     return (
         <Container>
-            <Breadcrumbs breadcrumbs={categories} />
-            <main>
-                <ProductDetail product={product} />
-            </main>
+            {categories.length > 0 && <Breadcrumbs breadcrumbs={categories} />}
+            {product.id ? (
+                <main>
+                    <ProductDetail product={product} />
+                </main>
+            ) : null}
         </Container>
     );
 };
