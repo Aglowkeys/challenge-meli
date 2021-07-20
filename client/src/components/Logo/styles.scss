@@ -1,0 +1,16 @@
+@import '../../sass/variables';
+
+.logo {
+    transition: transform 200ms ease, filter 200ms ease;
+
+    &:hover,
+    &:focus {
+        outline: none;
+        transform: translateY(-2px);
+        filter: drop-shadow(0 0 15px white);
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+}

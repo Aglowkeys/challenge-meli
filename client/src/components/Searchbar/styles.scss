@@ -5,6 +5,8 @@
     border: 2px solid transparent;
     border-radius: 6px;
     transition: border-color 200ms ease;
+    width: 100%;
+    min-width: 0;
 
     &:focus-within {
         border-color: $blue;
