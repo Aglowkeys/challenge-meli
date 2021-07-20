@@ -1,5 +1,12 @@
 const Details = () => {
-    return <div>DETAILS</div>;
+    return (
+        <div>
+            {/* 
+			BREADCRUMBS
+			MAIN -> Detalles prod
+		*/}
+        </div>
+    );
 };
 
 export default Details;

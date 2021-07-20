@@ -4,9 +4,10 @@
     display: flex;
     border: 2px solid transparent;
     border-radius: 6px;
+    transition: border-color 200ms ease;
 
     &:focus-within {
-        border: 2px solid $blue;
+        border-color: $blue;
     }
 
     label {
@@ -38,6 +39,7 @@
         align-items: center;
         justify-content: center;
         outline: none;
+        transition: background-color 200ms ease;
 
         &:hover,
         &:focus {

@@ -4,7 +4,9 @@ const Breadcrumbs = ({ breadcrumbs }) => {
     return (
         <ul className='breadcrumbs'>
             {breadcrumbs.map((category) => (
-                <li key={category}>{category}</li>
+                <li key={category}>
+                    <a href='#'>{category}</a>
+                </li>
             ))}
         </ul>
     );

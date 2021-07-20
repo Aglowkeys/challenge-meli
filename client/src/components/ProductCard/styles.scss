@@ -2,9 +2,11 @@
 
 .product-card {
     background-color: white;
-    display: grid;
-    grid-template-columns: 180px repeat(9, 1fr);
-    padding-left: $spacing-100;
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    outline: 2px solid transparent;
+    transition: outline-color 200ms ease;
 
     &:not(:last-child) {
         padding-bottom: $spacing-100;
@@ -12,11 +14,15 @@
         border-bottom: 1px solid $gray-100;
     }
 
+    &:focus-within {
+        outline-color: lighten($blue, 30%);
+    }
+
     .img-container {
-        grid-column: 1 / 2;
+        flex: 0 0 180px;
         justify-self: start;
         height: 180px;
-        // margin-right: $spacing-100;
+        margin-right: $spacing-100;
 
         img {
             width: 100%;
@@ -26,9 +32,14 @@
         }
     }
 
+    .product-info-container {
+        flex: 1;
+        display: flex;
+    }
+
     .product-info {
+        flex: 6 1 0;
         margin-top: $spacing-100;
-        grid-column: 2/7;
     }
 
     .product__price {
@@ -38,18 +49,64 @@
 
     .product__shipping {
         display: inline-block;
-        margin-left: 1em;
+        margin-left: $spacing-100;
     }
 
     .product__title {
         font-size: $font-400;
         font-weight: 400;
+        max-width: 30ch;
+        margin-top: $spacing-200;
+
+        a {
+            text-decoration: none;
+            color: currentColor;
+            outline: none;
+            transition: color 200ms ease;
+
+            &:hover,
+            &:focus {
+                color: $blue;
+            }
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 
-    .product__location {
-        grid-column: 9/-1;
+    .product__address {
+        flex: 2 0 0;
         margin-top: $spacing-100;
         font-size: $font-100;
         color: $gray-300;
+    }
+
+    @media (max-width: $breakpoint-md) {
+        .product-info-container {
+            flex-direction: column;
+        }
+
+        .product__title {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+
+        .img-container {
+            flex: 0 0 120px;
+            height: 120px;
+            margin-right: 0;
+        }
+
+        .product__title {
+            margin-top: $spacing-100;
+        }
     }
 }

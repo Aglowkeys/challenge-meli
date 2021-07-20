@@ -6,7 +6,6 @@ import searchIcon from '../../assets/search.png';
 const Searchbar = () => {
     const [query, setQuery] = useState('');
     const history = useHistory();
-    console.log({ query });
 
     const handleChange = (ev) => {
         setQuery(ev.target.value);

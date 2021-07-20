@@ -11,6 +11,7 @@
         font-size: $font-200;
         cursor: pointer;
         color: $gray-200;
+        transition: color 200ms ease;
 
         &:hover {
             color: $gray-300;
@@ -18,6 +19,15 @@
 
         &:last-child {
             font-weight: 600;
+        }
+
+        a {
+            color: currentColor;
+            text-decoration: none;
+
+            &:focus {
+                outline: 1px dashed $gray-300;
+            }
         }
     }
 
