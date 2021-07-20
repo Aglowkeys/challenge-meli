@@ -1,3 +1,10 @@
+const validConditions = {
+    new: 'Nuevo',
+    used: 'Usado',
+    refurbished: 'Reacondicionado',
+    not_specified: 'Estado sin especificar',
+};
+
 const getCategoryId = (availableFilters) => {
     const sortedCategories = availableFilters[0].values.sort((a, b) => {
         return b.results - a.results;
@@ -19,7 +26,7 @@ const getFormattedProduct = (product) => {
             decimals: getDecimals(product.price),
         },
         picture: product.thumbnail,
-        condition: product.condition,
+        condition: validConditions[product.condition],
         free_shipping: product.shipping.free_shipping,
         address: product.address.state_name,
     };
@@ -35,7 +42,7 @@ const getProductWithDescription = (product, description) => {
             decimals: getDecimals(product.price),
         },
         picture: product.pictures[0]?.url || product.thumbnail,
-        condition: product.condition,
+        condition: validConditions[product.condition],
         free_shipping: product.shipping.free_shipping,
         sold_quantity: product.sold_quantity,
         description,
