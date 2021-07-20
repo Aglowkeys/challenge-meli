@@ -5,7 +5,7 @@ import Paragraphs from '../Paragraphs';
 
 const ProductDetail = ({ product }) => {
     const { condition, sold_quantity, title, price, description, picture } = product;
-    console.log({ product });
+
     return (
         <section className='product-container'>
             <div className='flex-container'>
