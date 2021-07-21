@@ -4,7 +4,7 @@ import Container from './components/Container';
 import Home from './pages/Home';
 import Results from './pages/Results';
 import Details from './pages/Details';
-import NotFound from './components/NotFound';
+import PageNotFound from './pages/PageNotFound';
 import Footer from './components/Footer';
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
                     <Route exact path='/' component={Home} />
                     <Route exact path='/items' component={Results} />
                     <Route exact path='/items/:id' component={Details} />
-                    <NotFound />
+                    <PageNotFound />
                 </Switch>
             </Container>
             <Footer />

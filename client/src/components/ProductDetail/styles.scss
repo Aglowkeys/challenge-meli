@@ -2,6 +2,7 @@
 
 .product-container {
     padding: $spacing-100;
+
     .flex-container {
         display: flex;
     }
@@ -66,6 +67,10 @@
 
         .product__image {
             flex: 0;
+        }
+
+        .product__info {
+            margin-left: 0;
         }
 
         .product__price {
