@@ -5,12 +5,7 @@ const Paragraphs = ({ string }) => {
     return string.split('\n').map(
         (el, i) =>
             !!el && (
-                <p
-                    key={i}
-                    className={
-                        !el.trim().endsWith('.') ? 'paragraph subtitle-paragraph' : 'paragraph'
-                    }
-                >
+                <p key={i} className='paragraph'>
                     {el}
                 </p>
             )
