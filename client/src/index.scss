@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+::placeholder {
+    color: $gray-200;
+    opacity: 1;
+}
+
 body {
     font-family: 'Nunito', 'Proxima Nova', Helvetica, Arial, sans-serif;
     background-color: $gray-100;
