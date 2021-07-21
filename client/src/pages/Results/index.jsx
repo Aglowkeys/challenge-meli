@@ -1,12 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from '../../axios';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ProductsContainer from '../../components/ProductsContainer';
 
+const initialState = 'idle';
+
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 'SET_LOADING':
+            return 'loading';
+
+        case 'SET_LOADED':
+            return 'loaded';
+
+        case 'SET_ERROR':
+            return 'error';
+
+        default:
+            return state;
+    }
+};
+
 const Results = () => {
     const [products, setProducts] = useState([]);
     const [breadcrumbs, setBreadcrumbs] = useState([]);
+    const [status, dispatch] = useReducer(reducer, initialState);
 
     const { search } = useLocation();
     const params = new URLSearchParams(search);
@@ -23,6 +42,14 @@ const Results = () => {
                 .catch((err) => console.error(err));
         }
     }, [query]);
+
+    if (status === 'loading') {
+        return <main>Cargando...</main>;
+    }
+
+    if (status === 'error') {
+        return <main>Error...</main>;
+    }
 
     return (
         <>

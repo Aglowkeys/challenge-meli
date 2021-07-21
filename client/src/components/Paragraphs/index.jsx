@@ -7,7 +7,9 @@ const Paragraphs = ({ string }) => {
             !!el && (
                 <p
                     key={i}
-                    className={!el.endsWith('.') ? 'paragraph subtitle-paragraph' : 'paragraph'}
+                    className={
+                        !el.trim().endsWith('.') ? 'paragraph subtitle-paragraph' : 'paragraph'
+                    }
                 >
                     {el}
                 </p>

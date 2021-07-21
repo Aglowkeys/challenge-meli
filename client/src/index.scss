@@ -26,3 +26,8 @@ main {
     margin-bottom: 3em;
     min-height: 70vh;
 }
+
+main.flex {
+    display: flex;
+    justify-content: center;
+}

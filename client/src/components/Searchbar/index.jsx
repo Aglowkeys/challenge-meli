@@ -12,7 +12,9 @@ const Searchbar = () => {
     };
     const handleSubmit = (ev) => {
         ev.preventDefault();
-        history.push(`/items?search=${query}`);
+        if (query !== '') {
+            history.push(`/items?search=${query}`);
+        }
     };
     return (
         <form className='search-form' onSubmit={handleSubmit}>
