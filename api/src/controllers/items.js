@@ -44,11 +44,18 @@ const getProductInfo = async (req, res) => {
 
     try {
         const { data: product } = await axios.get(`/items/${id}`);
-        const { data: productDescription } = await axios.get(`/items/${id}/description`);
         const { data: categoryData } = await axios.get(`/categories/${product.category_id}`);
-
         const { path_from_root } = categoryData;
         const categories = path_from_root.map((cat) => cat.name);
+
+        // Porque no todos los productos tienen una descripción:
+        let productDescription = {};
+        try {
+            const { data } = await axios.get(`/items/${id}/description`);
+            productDescription = data;
+        } catch (err) {
+            productDescription = { plain_text: 'Producto sin descripción.' };
+        }
 
         const item = getProductWithDescription(product, productDescription.plain_text);
         const formattedObject = { author, item, categories };
