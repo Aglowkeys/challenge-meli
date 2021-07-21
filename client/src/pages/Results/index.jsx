@@ -10,6 +10,7 @@ import ProductsContainer from '../../components/ProductsContainer';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 import ProductNotFound from '../../components/ProductNotFound';
+import Head from '../../components/Head';
 
 const Results = () => {
     const [products, setProducts] = useState([]);
@@ -54,6 +55,7 @@ const Results = () => {
 
     return (
         <>
+            <Head title={`Resultados de ${query} | Mercado Libre`} />
             {breadcrumbs.length > 0 && <Breadcrumbs breadcrumbs={breadcrumbs} />}
             {products.length > 0 && <ProductsContainer arrayProd={products} />}
         </>

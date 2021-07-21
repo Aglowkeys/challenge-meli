@@ -8,9 +8,9 @@ import { SET_LOADING, SET_LOADED, SET_ERROR_500, SET_ERROR_404 } from '../../red
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 import ProductNotFound from '../../components/ProductNotFound';
-
 import ProductDetail from '../../components/ProductDetail';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import Head from '../../components/Head';
 
 const Details = () => {
     const { id } = useParams();
@@ -50,6 +50,7 @@ const Details = () => {
 
     return (
         <>
+            <Head title='Detalles del producto | Mercado Libre' />
             {categories.length > 0 && <Breadcrumbs breadcrumbs={categories} />}
             {product.id ? (
                 <main>
