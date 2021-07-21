@@ -17,7 +17,7 @@
     }
 
     .product__info {
-        flex: 3 0 0;
+        flex: 3 0 300px;
         margin-left: $spacing-100;
     }
 
@@ -59,7 +59,7 @@
         }
     }
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: $breakpoint-lg) {
         .flex-container {
             flex-direction: column;
         }
@@ -73,7 +73,7 @@
         }
     }
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: $breakpoint-xs) {
         .product__price {
             font-size: $font-600;
 

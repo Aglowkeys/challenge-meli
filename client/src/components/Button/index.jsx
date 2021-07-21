@@ -1,4 +1,5 @@
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 const Button = ({ text, ...rest }) => {
     return (
@@ -9,3 +10,7 @@ const Button = ({ text, ...rest }) => {
 };
 
 export default Button;
+
+Button.propTypes = {
+    text: PropTypes.string.isRequired,
+};

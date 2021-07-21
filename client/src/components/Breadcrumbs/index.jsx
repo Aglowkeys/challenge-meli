@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const Breadcrumbs = ({ breadcrumbs }) => {
@@ -13,3 +14,7 @@ const Breadcrumbs = ({ breadcrumbs }) => {
 };
 
 export default Breadcrumbs;
+
+Breadcrumbs.propTypes = {
+    breadcrumbs: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

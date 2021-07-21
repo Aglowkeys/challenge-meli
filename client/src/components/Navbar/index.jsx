@@ -6,10 +6,8 @@ import './styles.scss';
 const Navbar = () => (
     <nav className='navbar'>
         <Container>
-            <>
-                <Logo />
-                <Searchbar />
-            </>
+            <Logo />
+            <Searchbar />
         </Container>
     </nav>
 );

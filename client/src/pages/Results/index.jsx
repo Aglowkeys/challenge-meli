@@ -26,8 +26,8 @@ const Results = () => {
 
     return (
         <>
-            {breadcrumbs.length && <Breadcrumbs breadcrumbs={breadcrumbs} />}
-            {products.length && <ProductsContainer arrayProd={products} />}
+            {breadcrumbs.length > 0 && <Breadcrumbs breadcrumbs={breadcrumbs} />}
+            {products.length > 0 && <ProductsContainer arrayProd={products} />}
         </>
     );
 };

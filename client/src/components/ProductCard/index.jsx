@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 import freeShippingIcon from '../../assets/shipping.png';
@@ -33,3 +34,17 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+
+ProductCard.propTypes = {
+    product: PropTypes.shape({
+        picture: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        price: PropTypes.shape({
+            currency: PropTypes.string.isRequired,
+            amount: PropTypes.number.isRequired,
+            decimals: PropTypes.number.isRequired,
+        }),
+        free_shipping: PropTypes.bool.isRequired,
+        id: PropTypes.string.isRequired,
+    }).isRequired,
+};

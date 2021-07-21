@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Button from '../Button';
 import './styles.scss';
 import { formatDecimals } from '../../utils/functions';
@@ -35,7 +36,17 @@ const ProductDetail = ({ product }) => {
 
 export default ProductDetail;
 
-/* 
-	Estado (nuevo)
-	Cuántos vendidos
-*/
+ProductDetail.propTypes = {
+    product: PropTypes.shape({
+        condition: PropTypes.string.isRequired,
+        sold_quantity: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        price: PropTypes.shape({
+            currency: PropTypes.string.isRequired,
+            amount: PropTypes.number.isRequired,
+            decimals: PropTypes.number.isRequired,
+        }),
+        description: PropTypes.string.isRequired,
+        picture: PropTypes.string.isRequired,
+    }).isRequired,
+};

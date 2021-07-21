@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ProductCard from '../ProductCard';
 
 const ProductsContainer = ({ arrayProd }) => {
@@ -11,3 +12,7 @@ const ProductsContainer = ({ arrayProd }) => {
 };
 
 export default ProductsContainer;
+
+ProductsContainer.propTypes = {
+    arrayProd: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

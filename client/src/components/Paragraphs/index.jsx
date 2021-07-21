@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const Paragraphs = ({ string }) => {
@@ -15,3 +16,7 @@ const Paragraphs = ({ string }) => {
 };
 
 export default Paragraphs;
+
+Paragraphs.propTypes = {
+    string: PropTypes.string.isRequired,
+};

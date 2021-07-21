@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import './styles.scss';
 
 const Container = ({ children }) => {
@@ -5,3 +7,7 @@ const Container = ({ children }) => {
 };
 
 export default Container;
+
+Container.propTypes = {
+    children: PropTypes.node,
+};
