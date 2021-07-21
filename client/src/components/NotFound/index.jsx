@@ -1,4 +1,5 @@
-import NotFoundImage from '../../components/NotFoundImage';
+import { Link } from 'react-router-dom';
+import NotFoundImage from './NotFoundImage';
 import './styles.scss';
 
 const NotFound = () => (
@@ -6,7 +7,9 @@ const NotFound = () => (
         <div className='flex-container'>
             <NotFoundImage />
             <h2>No se encontró lo que buscabas...</h2>
-            <p></p>
+            <p>
+                Prueba con otro término o <Link to='/'>vuelve al inicio</Link>.
+            </p>
         </div>
     </main>
 );

@@ -1,12 +1,6 @@
 const NotFoundImage = () => {
     return (
-        <svg
-            xmlns='http://www.w3.org/2000/svg'
-            width='251'
-            height='154'
-            data-reactid='8'
-            viewBox='0 0 251 154'
-        >
+        <svg xmlns='http://www.w3.org/2000/svg' data-reactid='8' viewBox='0 0 251 154'>
             <g fill='none' fillRule='evenodd' data-reactid='9'>
                 <path
                     fill='#CCC'

@@ -4,7 +4,7 @@ import Container from './components/Container';
 import Home from './pages/Home';
 import Results from './pages/Results';
 import Details from './pages/Details';
-import NotFound from './pages/NotFound';
+import NotFound from './components/NotFound';
 import Footer from './components/Footer';
 
 const App = () => {
