@@ -1,8 +1,3 @@
-import Container from '../../components/Container';
-const Home = () => (
-    <Container>
-        <main>HOME</main>
-    </Container>
-);
+const Home = () => <main>HOME</main>;
 
 export default Home;

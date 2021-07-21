@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from '../../axios';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import Container from '../../components/Container';
 import ProductsContainer from '../../components/ProductsContainer';
 
 const Results = () => {
@@ -26,10 +25,10 @@ const Results = () => {
     }, [query]);
 
     return (
-        <Container>
+        <>
             {breadcrumbs.length && <Breadcrumbs breadcrumbs={breadcrumbs} />}
             {products.length && <ProductsContainer arrayProd={products} />}
-        </Container>
+        </>
     );
 };
 

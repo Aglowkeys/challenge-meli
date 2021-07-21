@@ -1,3 +1,3 @@
-const NotFound = () => <section>Not found</section>;
+const NotFound = () => <main>Not found</main>;
 
 export default NotFound;
