@@ -5,7 +5,7 @@ const Head = ({ title }) => {
     return (
         <Helmet>
             <title>{title}</title>
-            <link rel='icon' href='../../assets/logo.png' type='image/x-icon' />
+            <link rel='icon' href='logo.png' type='image/x-icon' />
             <meta charset='utf-8' />
             <meta
                 name='description'
