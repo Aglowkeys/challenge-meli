@@ -76,6 +76,10 @@
         .product__price {
             margin: $spacing-100 0;
         }
+
+        .product__description {
+            margin-top: $spacing-200;
+        }
     }
 
     @media (max-width: $breakpoint-xs) {
