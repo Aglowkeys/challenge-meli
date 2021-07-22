@@ -25,7 +25,7 @@ const Head = ({ title }) => {
                 property='og:description'
                 content='Desafío técnico de Front End enviado por Mercado Libre.'
             />
-            <meta property='og:image' content='https://i.imgur.com/62vm6XB.png' />
+            <meta property='og:image' content='https://i.imgur.com/aCl97fl.png' />
 
             {/* TAGS DE TWITTER */}
             <meta name='twitter:card' content='summary' />
@@ -36,7 +36,7 @@ const Head = ({ title }) => {
                 name='twitter:description'
                 content='Desafío técnico de Front End enviado por Mercado Libre.'
             />
-            <meta name='twitter:image' content='https://i.imgur.com/62vm6XB.png' />
+            <meta name='twitter:image' content='https://i.imgur.com/aCl97fl.png' />
             <meta name='twitter:image:alt' content='Pantalla de inicio de la aplicación' />
         </Helmet>
     );
