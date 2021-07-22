@@ -67,9 +67,11 @@
 
         .product__image {
             flex: 0;
+            margin-bottom: $spacing-200;
         }
 
         .product__info {
+            flex: 0;
             margin-left: 0;
         }
 
@@ -78,7 +80,7 @@
         }
 
         .product__description {
-            margin-top: $spacing-200;
+            max-width: 100%;
         }
     }
 

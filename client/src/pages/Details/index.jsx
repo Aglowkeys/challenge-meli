@@ -37,7 +37,7 @@ const Details = () => {
     }, [id]);
 
     if (status === 'loading') {
-        return <Loading text='Cargando tu producto...' />;
+        return <Loading text='Cargando datos del producto...' />;
     }
 
     if (status === 'error-404') {

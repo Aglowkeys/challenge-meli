@@ -15,7 +15,7 @@ const ProductDetail = ({ product }) => {
                 </div>
                 <div className='product__info'>
                     <p className='product__condition'>
-                        {condition} - {sold_quantity} vendidos
+                        {condition} - {sold_quantity || '0'} vendidos
                     </p>
                     <h2 className='product__title'>{title}</h2>
                     <p className='product__price'>
