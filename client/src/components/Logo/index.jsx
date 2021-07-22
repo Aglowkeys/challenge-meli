@@ -4,9 +4,11 @@ import './styles.scss';
 
 const Logo = () => {
     return (
-        <Link to='/' aria-label='Volver al inicio' className='logo'>
-            <img src={logo} alt='Logo Mercado Libre' />
-        </Link>
+        <div className='logo-container'>
+            <Link to='/' aria-label='Volver al inicio' className='logo'>
+                <img src={logo} alt='Logo Mercado Libre' />
+            </Link>
+        </div>
     );
 };
 
