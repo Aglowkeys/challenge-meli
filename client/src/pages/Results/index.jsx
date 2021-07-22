@@ -22,27 +22,27 @@ const Results = () => {
     const query = params.get('search');
 
     useEffect(() => {
-        if (query) {
-            dispatch({ type: SET_LOADING });
-            axios
-                .get(`/api/items?q=${query}`)
-                .then(({ data }) => {
-                    setProducts(data.items);
-                    setBreadcrumbs(data.categories);
-                    dispatch({ type: SET_LOADED });
-                })
-                .catch((err) => {
-                    if (err.message.endsWith('404')) {
-                        dispatch({ type: SET_ERROR_404 });
-                    } else {
-                        dispatch({ type: SET_ERROR_500 });
-                    }
-                });
-        }
+        // if (query) {
+        dispatch({ type: SET_LOADING });
+        axios
+            .get(`/api/items?q=${query}`)
+            .then(({ data }) => {
+                setProducts(data.items);
+                setBreadcrumbs(data.categories);
+                dispatch({ type: SET_LOADED });
+            })
+            .catch((err) => {
+                if (err.message.endsWith('404')) {
+                    dispatch({ type: SET_ERROR_404 });
+                } else {
+                    dispatch({ type: SET_ERROR_500 });
+                }
+            });
+        // }
     }, [query]);
 
     if (status === 'loading') {
-        return <Loading />;
+        return <Loading text='Buscando...' />;
     }
 
     if (status === 'error-404') {
@@ -55,7 +55,7 @@ const Results = () => {
 
     return (
         <>
-            <Head title={`Resultados de ${query} | Mercado Libre`} />
+            <Head title={`Resultados de ${query || 'tu búsqueda'} | Mercado Libre`} />
             {breadcrumbs.length > 0 && <Breadcrumbs breadcrumbs={breadcrumbs} />}
             {products.length > 0 && <ProductsContainer arrayProd={products} />}
         </>

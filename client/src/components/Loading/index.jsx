@@ -1,12 +1,17 @@
+import PropTypes from 'prop-types';
 import SinglePageLayout from '../SinglePageLayout';
 import Spinner from '../Spinner';
 
-const Loading = () => {
+const Loading = ({ text }) => {
     return (
         <SinglePageLayout>
-            <Spinner />
+            <Spinner text={text} />
         </SinglePageLayout>
     );
 };
 
 export default Loading;
+
+Loading.propTypes = {
+    text: PropTypes.string,
+};
