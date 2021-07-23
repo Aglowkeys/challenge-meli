@@ -4,7 +4,7 @@ import './styles.scss';
 const Spinner = ({ text = '' }) => {
     return (
         <>
-            <div className='spinner'></div>
+            <div className='spinner' data-testid='spinner'></div>
             {text && <h2 className='spinner-text'>{text}</h2>}
         </>
     );
