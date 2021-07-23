@@ -1,6 +1,9 @@
 <div align="center">
 <img src="https://i.imgur.com/phR8JsG.png" alt="Mercado Libre" />
- <h1>Challenge Mercado libre</h1>
+ <h1>Challenge Mercado libre
+ 
+ <small>Por Emiliano Alfonso</small>
+ </h1>
 </div>
 
 <p>Este es un desafío de front-end enviado por Mercado Libre, hecho con React para el front y Express para las rutas del back.</p>
