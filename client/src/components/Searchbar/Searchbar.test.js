@@ -1,10 +1,16 @@
-import { screen, render } from '@testing-library/react';
+import { screen, render, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { BrowserRouter } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 import SearchBar from '.';
 
 describe('Componente <Searchbar />', () => {
     beforeEach(() => {
-        render(<SearchBar />);
+        render(
+            <BrowserRouter>
+                <SearchBar />
+            </BrowserRouter>
+        );
     });
 
     it('Se renderiza correctamente', () => {
@@ -57,5 +63,13 @@ describe('Componente <Searchbar />', () => {
         userEvent.click(button);
         userEvent.click(button);
         expect(mockFn).toHaveBeenCalledTimes(3);
+    });
+
+    it('Modifica la URL una vez enviado', () => {
+        const input = screen.getByPlaceholderText('Nunca dejes de buscar');
+        userEvent.type(input, 'macbook');
+        userEvent.type(input, '{enter}');
+        expect(window.location.pathname).toEqual('/items');
+        expect(window.location.search).toEqual('?search=macbook');
     });
 });
