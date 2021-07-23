@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import Button from '../Button';
-import './styles.scss';
-import { formatDecimals } from '../../static/utils/functions';
 import Paragraphs from '../Paragraphs';
+import { formatDecimals } from '../../static/utils/functions';
+import './styles.scss';
 
 const ProductDetail = ({ product }) => {
     const { condition, sold_quantity, title, price, description, picture } = product;
 
     return (
-        <section className='product-container'>
+        <main className='product-container'>
             <div className='flex-container'>
                 <div className='product__image'>
                     <img src={picture} alt={title} />
@@ -31,7 +31,7 @@ const ProductDetail = ({ product }) => {
                 <h3>Descripción del producto</h3>
                 <Paragraphs string={description} />
             </div>
-        </section>
+        </main>
     );
 };
 

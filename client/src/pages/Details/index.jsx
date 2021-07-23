@@ -57,11 +57,7 @@ const Details = () => {
         <>
             <Head title='Detalles del producto | Mercado Libre' />
             {categories.length > 0 && <Breadcrumbs breadcrumbs={categories} />}
-            {product.id ? (
-                <main>
-                    <ProductDetail product={product} />
-                </main>
-            ) : null}
+            {product.id ? <ProductDetail product={product} /> : null}
         </>
     );
 };

@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 const App = () => {
     return (
-        <div className='App'>
+        <>
             <Navbar />
             <Container>
                 <Switch>
@@ -20,7 +20,7 @@ const App = () => {
                 </Switch>
             </Container>
             <Footer />
-        </div>
+        </>
     );
 };
 

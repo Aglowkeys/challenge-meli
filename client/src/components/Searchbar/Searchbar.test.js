@@ -1,7 +1,6 @@
-import { screen, render, fireEvent } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
 import SearchBar from '.';
 
 describe('Componente <Searchbar />', () => {
