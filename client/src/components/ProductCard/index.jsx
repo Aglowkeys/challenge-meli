@@ -15,9 +15,9 @@ const ProductCard = ({ product }) => {
                 <div className='product-info'>
                     <p className='product__price'>${price.amount.toLocaleString('es-AR')}</p>
                     {free_shipping && (
-                        <p className='product__shipping'>
+                        <span className='product__shipping'>
                             <img src={freeShippingIcon} alt='Envío gratis' />
-                        </p>
+                        </span>
                     )}
                     <h2 className='product__title'>
                         <Link to={`/items/${id}`}>
