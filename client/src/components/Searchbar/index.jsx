@@ -10,6 +10,7 @@ const Searchbar = () => {
     const handleChange = (ev) => {
         setQuery(ev.target.value);
     };
+
     const handleSubmit = (ev) => {
         ev.preventDefault();
         if (query !== '') {
@@ -17,7 +18,7 @@ const Searchbar = () => {
         }
     };
     return (
-        <form className='search-form' onSubmit={handleSubmit}>
+        <form className='search-form' onSubmit={handleSubmit} data-testid='search-form'>
             <label htmlFor='search-input'>Buscar un producto</label>
             <input
                 type='text'
