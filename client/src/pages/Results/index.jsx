@@ -27,7 +27,6 @@ const Results = () => {
     const query = params.get('search');
 
     useEffect(() => {
-        // if (query) {
         dispatch({ type: SET_LOADING });
         axios
             .get(`/api/items?q=${query}`)
@@ -43,7 +42,6 @@ const Results = () => {
                     dispatch({ type: SET_ERROR_500 });
                 }
             });
-        // }
     }, [query]);
 
     if (status === 'loading') {

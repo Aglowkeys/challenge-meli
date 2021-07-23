@@ -3,7 +3,7 @@ import './styles.scss';
 
 const Breadcrumbs = ({ breadcrumbs }) => {
     return (
-        <ul className='breadcrumbs'>
+        <ul className='breadcrumbs' data-testid='breadcrumbs'>
             {breadcrumbs.map((category) => (
                 <li key={category}>
                     <a href='#0'>{category}</a>
