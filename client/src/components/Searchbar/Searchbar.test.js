@@ -1,4 +1,4 @@
-import { screen, render, fireEvent } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import SearchBar from '.';
 
@@ -36,5 +36,26 @@ describe('Componente <Searchbar />', () => {
         const input = screen.getByPlaceholderText('Nunca dejes de buscar');
         userEvent.type(input, 'iPhone 9s 64gb ram dorado');
         expect(input).toHaveValue('iPhone 9s 64gb ram dorado');
+    });
+
+    it('Se puede enviar presionando Enter', () => {
+        const input = screen.getByPlaceholderText('Nunca dejes de buscar');
+        const form = screen.getByTestId('search-form');
+        const mockFn = jest.fn();
+        form.onsubmit = mockFn;
+        userEvent.type(input, '{enter}');
+        userEvent.type(input, '{enter}');
+        expect(mockFn).toHaveBeenCalledTimes(2);
+    });
+
+    it('Se puede enviar cliqueando en el botón', () => {
+        const button = screen.getByRole('button', { name: 'Buscar' });
+        const form = screen.getByTestId('search-form');
+        const mockFn = jest.fn();
+        form.onsubmit = mockFn;
+        userEvent.click(button);
+        userEvent.click(button);
+        userEvent.click(button);
+        expect(mockFn).toHaveBeenCalledTimes(3);
     });
 });
