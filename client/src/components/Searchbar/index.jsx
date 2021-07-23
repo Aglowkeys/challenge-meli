@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './styles.scss';
-import searchIcon from '../../assets/search.png';
+import searchIcon from '../../static/assets/search.png';
 
 const Searchbar = () => {
     const [query, setQuery] = useState('');

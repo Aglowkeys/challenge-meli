@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './styles.scss';
-import freeShippingIcon from '../../assets/shipping.png';
-import defaultImage from '../../assets/default.png';
+import freeShippingIcon from '../../static/assets/shipping.png';
+import defaultImage from '../../static/assets/default.png';
 
 const ProductCard = ({ product }) => {
     const { picture, title, price, free_shipping, id } = product;

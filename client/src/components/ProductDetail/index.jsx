@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import './styles.scss';
-import { formatDecimals } from '../../utils/functions';
+import { formatDecimals } from '../../static/utils/functions';
 import Paragraphs from '../Paragraphs';
 
 const ProductDetail = ({ product }) => {

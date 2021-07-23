@@ -1,9 +1,14 @@
 import { useEffect, useState, useReducer } from 'react';
 import { useLocation } from 'react-router-dom';
-import axios from '../../axios';
+import axios from '../../static/axios';
 
-import { initialState, statusReducer } from '../../reducer';
-import { SET_LOADING, SET_LOADED, SET_ERROR_500, SET_ERROR_404 } from '../../reducer/constants';
+import { initialState, statusReducer } from '../../static/reducer';
+import {
+    SET_LOADING,
+    SET_LOADED,
+    SET_ERROR_500,
+    SET_ERROR_404,
+} from '../../static/reducer/constants';
 
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ProductsContainer from '../../components/ProductsContainer';
