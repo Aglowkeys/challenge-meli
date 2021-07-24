@@ -1,9 +1,9 @@
-import './styles.scss';
 import PropTypes from 'prop-types';
+import s from './styles.module.scss';
 
 const Button = ({ text, ...rest }) => {
     return (
-        <button {...rest} className='button'>
+        <button {...rest} className={s.button}>
             {text}
         </button>
     );

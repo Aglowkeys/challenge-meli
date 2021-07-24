@@ -1,8 +1,8 @@
-import './styles.scss';
+import s from './styles.module.scss';
 
 const ShoppingIcon = () => {
     return (
-        <div className='icon-container'>
+        <div className={s.iconContainer}>
             <svg xmlns='http://www.w3.org/2000/svg' viewBox='-5 0 511 512' width='120'>
                 <path
                     fillRule='evenodd'

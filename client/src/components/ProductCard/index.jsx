@@ -2,25 +2,25 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import freeShippingIcon from '../../static/assets/shipping.png';
 import defaultImage from '../../static/assets/default.png';
-import './styles.scss';
+import s from './styles.module.scss';
 
 const ProductCard = ({ product }) => {
     const { picture, title, price, free_shipping, id } = product;
     return (
-        <article className='product-card'>
-            <div className='img-container'>
+        <article className={s.productCard}>
+            <div className={s.imgContainer}>
                 <img src={picture || defaultImage} alt={title} />
             </div>
 
-            <div className='product-info-container'>
-                <div className='product-info'>
-                    <p className='product__price'>${price.amount.toLocaleString('es-AR')}</p>
+            <div className={s.productInfo__container}>
+                <div className={s.productInfo}>
+                    <p className={s.product__price}>${price.amount.toLocaleString('es-AR')}</p>
                     {free_shipping && (
-                        <span className='product__shipping'>
+                        <span className={s.product__shipping}>
                             <img src={freeShippingIcon} alt='Envío gratis' />
                         </span>
                     )}
-                    <h2 className='product__title'>
+                    <h2 className={s.product__title}>
                         <Link to={`/items/${id}`}>
                             <span aria-hidden='true'></span>
                             {title}
@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
                     </h2>
                 </div>
 
-                <p className='product__address'>{product.address}</p>
+                <p className={s.product__address}>{product.address}</p>
             </div>
         </article>
     );

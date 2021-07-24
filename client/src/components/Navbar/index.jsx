@@ -1,10 +1,10 @@
 import Searchbar from '../Searchbar';
 import Container from '../Container';
 import Logo from '../Logo';
-import './styles.scss';
+import s from './styles.module.scss';
 
 const Navbar = () => (
-    <nav className='navbar'>
+    <nav className={s.navbar}>
         <Container>
             <Logo />
             <Searchbar />

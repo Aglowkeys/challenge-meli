@@ -1,10 +1,11 @@
 @import '../../sass/variables';
 
-.logo-container {
+.logoContainer {
     a {
         display: flex;
         align-items: center;
     }
+
     .logo {
         transition: filter 200ms ease;
 

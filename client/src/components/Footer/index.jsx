@@ -1,9 +1,9 @@
 import Container from '../Container';
-import './styles.scss';
+import s from './styles.module.scss';
 
 const Footer = () => {
     return (
-        <footer className='footer'>
+        <footer className={s.footer}>
             <Container>
                 <p>
                     Realizado por{' '}

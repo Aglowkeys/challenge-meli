@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import searchIcon from '../../static/assets/search.png';
-import './styles.scss';
+import s from './styles.module.scss';
 
 const Searchbar = () => {
     const [query, setQuery] = useState('');
@@ -13,12 +13,13 @@ const Searchbar = () => {
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
-        if (query !== '') {
+        if (query) {
             history.push(`/items?search=${query}`);
         }
     };
+
     return (
-        <form className='search-form' onSubmit={handleSubmit} data-testid='search-form'>
+        <form className={s.searchForm} onSubmit={handleSubmit} data-testid='search-form'>
             <label htmlFor='search-input'>Buscar un producto</label>
             <input
                 type='text'

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import './styles.scss';
+import s from './styles.module.scss';
 
 const Container = ({ children }) => {
-    return <div className='container'>{children}</div>;
+    return <div className={s.container}>{children}</div>;
 };
 
 export default Container;

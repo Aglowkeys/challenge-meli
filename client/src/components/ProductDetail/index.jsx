@@ -2,24 +2,24 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import Paragraphs from '../Paragraphs';
 import { formatDecimals } from '../../static/utils/functions';
-import './styles.scss';
+import s from './styles.module.scss';
 
 const ProductDetail = ({ product }) => {
     const { condition, sold_quantity, title, price, description, picture } = product;
 
     return (
-        <main className='product-container'>
-            <div className='flex-container'>
-                <div className='product__image'>
+        <main className={s.productContainer}>
+            <div className={s.flexContainer}>
+                <div className={s.product__image}>
                     <img src={picture} alt={title} />
                 </div>
-                <div className='product__info'>
-                    <p className='product__condition'>
+                <div className={s.product__info}>
+                    <p className={s.product__condition}>
                         {condition} - {sold_quantity || '0'}{' '}
                         {sold_quantity === 1 ? 'vendido' : 'vendidos'}
                     </p>
-                    <h2 className='product__title'>{title}</h2>
-                    <p className='product__price'>
+                    <h2 className={s.product__title}>{title}</h2>
+                    <p className={s.product__price}>
                         ${price.amount.toLocaleString('es-AR')}
                         <span>{formatDecimals(price.decimals)}</span>
                     </p>
@@ -27,7 +27,7 @@ const ProductDetail = ({ product }) => {
                 </div>
             </div>
 
-            <div className='product__description'>
+            <div className={s.product__description}>
                 <h3>Descripción del producto</h3>
                 <Paragraphs string={description} />
             </div>

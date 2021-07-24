@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import './style.scss';
+import s from './style.module.scss';
 
 const SinglePageLayout = ({ children }) => {
     return (
-        <main className='flex'>
-            <div className='flex-container-page'>{children}</div>
+        <main className={s.flex}>
+            <div className={s.flexContainer}>{children}</div>
         </main>
     );
 };

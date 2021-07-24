@@ -5,10 +5,10 @@
     padding: $spacing-100 0;
     text-align: center;
 
-    .container {
+    // Así nos aseguramos que estamos seleccionando el Container y no otro div
+    & > div:only-child {
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
     form {
