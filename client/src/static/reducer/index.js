@@ -2,7 +2,7 @@ import { SET_ERROR_404, SET_ERROR_500, SET_LOADED, SET_LOADING } from './constan
 
 export const initialState = 'idle';
 
-export const statusReducer = (state = initialState, { type }) => {
+export const statusReducer = (state, { type }) => {
     switch (type) {
         case SET_LOADING:
             return 'loading';
@@ -17,6 +17,6 @@ export const statusReducer = (state = initialState, { type }) => {
             return 'error';
 
         default:
-            return state;
+            throw new Error('El reducer recibió un tipo de acción no soportada: ' + type);
     }
 };
