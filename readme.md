@@ -8,6 +8,8 @@
 
 <p>Este es un desafío de front-end enviado por Mercado Libre, hecho con React para el front y Express para las rutas del back.</p>
 
+<br />
+
 ## 💻 ¿Está deployado?
 
 Sí, podés visitar la página cliqueando [acá](https://mercadolibre-rho.vercel.app/).
