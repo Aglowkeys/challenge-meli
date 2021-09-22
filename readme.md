@@ -12,7 +12,7 @@
 
 ## 💻 ¿Está deployado?
 
-Sí, podés visitar la página cliqueando [acá](https://mercadolibre-rho.vercel.app/).
+Por problemas con Vercel (que lo detectaba como una página de phishing), tuve que quitar la versión deployada.
 
 <br />
 
